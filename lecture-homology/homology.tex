@@ -1,0 +1,487 @@
+\documentclass[8pt]{beamer}
+
+\usetheme{Madrid}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Ima}{Im}
+
+\title{Гомологии. Обзор}
+\subtitle{Введение в цепные, симплициальные, сингулярные и клеточные гомологии}
+
+
+%\usetheme{lucid}
+\begin{document}
+	\frame {
+		\titlepage
+	}
+	\frame {
+		\frametitle{Начальные сведения из алгебры}
+		\large
+		Отображение групп (объектов абелевой категории) $f: A\to B$ имеет ядро $\Ker f\subset A$ и образ $\Ima f\subset B$.
+		\begin{itemize}
+		\item Для групп $\Ker f = \{x\in A| f(x)=0\}$, $\Ima f = f(A)$.
+		\item \pause Условие $\Ker f=0$ означает инъективность $f$ ($f(x)\ne f(y)$ при $x\ne y$)
+		\item Условие $\Ima f=B$ означает сюрьективность $f$ ($\forall b\in B\exists a\in A f(a)=b$)
+		\item \pause Что означает условие $\Ker f=A$, $\Ima f=0$?
+		\end{itemize}
+
+		\kern1cm
+		\pause
+		Важную роль будут играть свободные абелевы группы.
+		\pause
+		\begin{itemize}
+		\item Свободная (абелева) группа с образующими из множества $A$ (обозн. $\mathbb Z^A$) это множество отображений $A\to \mathbb Z$, имеющих конечное количество элементов с ненулевым образом. 
+		\item Для каждого $a\in A$ в $\mathbb Z^A$ есть образующая $f: A\to\mathbb Z, f(x) = \delta(x,a)$
+		\item Образующую, соответствующую элементу $a$,  будем обозначать $a$
+		\item Гомоморфизм $\mathbb Z^A\to G$ в любую группу достаточно (произвольно) задать на образующих
+		\end{itemize}
+	}
+	\frame {
+		\large
+		\frametitle{Точные последовательности}
+		\begin{columns}
+		\column{0.45\textwidth}
+
+		\begin{block}{Определение}
+		\[\cdots \xrightarrow{f_{n-2}} U_{n-1} \xrightarrow{f_{n-1}} U_{n} \xrightarrow{f_{n}} U_{n+1}\to\cdots\]
+		Ограниченная или неограниченная последовательность абелевых групп $F_n$ и их гомоморфизмов $f_n: F_n\to F_{n+1}$ (в общем случае, объектов абелевой категории) называется точной в члене $n$, если
+		\[\Ima f_{n-1} = \Ker f_{n}.\]
+		И просто точной, если она точна во всех членах.
+		\end{block}
+
+		\column{0.45\textwidth}
+
+		\pause
+
+		Что означает точность в этих примерах?
+
+		\begin{itemize}
+		\item $0 \to A \to C$
+		\pause\item $C \to B \to 0$
+		\pause\item $0 \to F \to C \to B$
+		\pause\item $G \to C \to B \to 0$
+		\pause\item ({\it Короткая точная последовательность}) $0 \to A \to C \to B \to 0$
+		\pause\item ({\it Левая резольвента})\\$\cdots \to P_2 \to P_1 \to F \to 0$
+		\end{itemize}
+
+
+		\end{columns}
+	}
+	\frame {
+\large
+		\frametitle{Цепные комплексы}
+		А что, если ослабить условие $\Ima f_{n} = \Ker f_{n+1}$ до $\Ima f_{n} \subset \Ker f_{n+1}$? Такая последовательность будет называться {\it коцепной комплекс}.
+
+		Если перенумеровать группы в обратном порядке, то такой комплекс называют {\it цепным}, гомоморфизмы традиционно обозначают $\partial_n:F_n\to F_{n-1}$.
+
+		\begin{block}{Лемма}
+		Условие $\Ima\partial_{n+1} \subset \Ker\partial_{n}$ эквивалентно $\partial_{n}\partial_{n+1} = 0.$
+		\end{block}
+
+		\pause
+
+		Поскольку последовательность уже не точная, можно измерить, насколько сильно она не точная. Для этого положим $H_n = \Ker\partial_{n} / \Ima\partial_{n+1}$
+
+		\pause
+
+		\begin{block}{Итог}
+		Цепной комплекс $$\cdots \xleftarrow{\partial_{n-1}} K_{n-1} \xleftarrow{\partial_{n}} K_{n} \xleftarrow{\partial_{n+1}} K_{n+1}\leftarrow\cdots$$
+
+		\pause Элементы $K_n$~-- \textit{цепи}, размерности $n$. 
+		
+		\pause Элементы $B_n = \Ima\partial_{n+1}\subset K_n$~-- \textit{границы}. 
+
+		Элементы $Z_n = \Ker\partial_{n}\subset K_n$~-- \textit{циклы}.
+		
+		\pause Условие комплекса: $B_n\subset Z_n$. \textit{Гомологии} $H_n=Z_n/B_n$.
+		\end{block}
+
+		\pause Чему равны гомологии точной последовательности?
+	}
+
+	\frame {
+		\frametitle{Схема гомологий}
+		
+		\begin{figure}
+		    \centering
+		    \def\svgwidth{1\columnwidth}
+		    \input{hom-scheme.pdf_tex}
+		\end{figure}
+	}
+
+	\frame {
+		\frametitle{Геометрические примеры комплексов}
+		
+		\Large{Все дальнейшие примеры гомологий описывают только построение цепного комплекса. Сами гомологии вычисляются в соответствии с определением гомологий цепного комплекса}
+
+		\begin{itemize}
+		\item На $X$ вводится некая геометрическая структура
+		\item \pause По этой стуктуре строится цепной комплекс
+		\item \pause У этого комплекса вычисляются гомологии и объявляются гомологиями $X$
+		\item Обычно, геометрические комплексы состоят из свободных (абелевых) групп $\mathbb Z^A$. 
+		%\item Гомоморфизм свободной группы достаточно (произвольно) задать на образующих
+		\item Вместо $\mathbb Z$ можно использовать поле, например, $\mathbb R$ или даже $\mathbb F_2$, в этом случае, вычисление упрощается, однако, теряется часть информации.
+		\end{itemize}
+
+		\pause
+		\begin{block}{Проблема}
+		А если ввести геометрическую структуру иным образом, получатся ли гомологии такими же?
+
+		\pause Это называется инвариантностью гомологий.
+		\end{block}
+
+	}
+
+	\frame {
+		\frametitle{Симплициальные гомологии}
+		\begin{columns}
+		\column{0.45\textwidth}
+		
+		\begin{itemize}
+		\item У топологического пространства с заданной триангуляцией
+		\item Требуют задания явной структуры
+		\item Имеют формальное обобщение
+		\item Можно вычислять гомологии, хотя и трудоёмко
+		\item Просто доказать условие комплекса $\partial\partial=0$
+		\item Инвариантность доказать сложно
+		\end{itemize}
+
+		\pause
+		Симплекс $\Delta_n$ размерности $n$ - выпуклая оболочка $n+1$ точки общего положения
+		\begin{figure}
+		    \centering
+		    \def\svgwidth{.6\columnwidth}
+		    \input{simplexes.pdf_tex}
+		\end{figure}
+
+		\pause
+		$$\partial [01] = [0] - [1]; \partial [012] = [01] - [02] + [12];$$
+		$$\partial [x_1 x_2\ldots x_n] = \sum_{i=1..n}(-1)^{n-i}[x_1\ldots{\color{red}x_i}\ldots x_n]$$
+
+		\column{0.45\textwidth}
+		\pause
+		Вопросы:
+		\begin{itemize}
+		\item Чему равно $\partial [0123]$?
+		\item Проверить $\partial\partial [012]=0$
+		\item Почему $\partial\partial=0$?
+		\end{itemize}
+		\pause
+		\begin{block}{Определение}
+		\begin{itemize}
+		\item Симплициальное пространство состоит из симплексов
+		\item Вместе с каждым симплексом включает все его грани
+		\item Два симплекса не могут иметь более 1 общей грани!
+		\item Симплициальный комплекс состоит из свободных (абелевых) групп
+		\item По одной образующей $n$-ной компоненты на каждый $n$-симплекс
+		\item Дифференциал определяется значениями на порождающих свободной группы
+		\end{itemize}
+		\end{block}
+		\end{columns}
+	}
+
+	\frame {
+		\frametitle{Симплициальные гомологии. Пример}
+		\large
+		\begin{columns}
+		\column{0.6\textwidth}
+		Пример --- сфера.
+		\onslide<2-> Тут \begin{itemize}
+		\item 0 симплексов $\Delta_3$
+		\item 4 симплекса $\Delta_2$
+		\item 6 симплексов $\Delta_1$
+		\item 4 симплекса $\Delta_0$
+		\end{itemize}
+
+	\kern2cm
+		\begin{tabular}{c c c c c c c c c c  }
+		&&& 0 && 1 && 2 \\
+		$K$ & $0$ & $\leftarrow$ & ${\mathbb Z}^4$ & $\leftarrow$ & ${\mathbb Z}^6$ & $\leftarrow$ & ${\mathbb Z}^4$ & $\leftarrow$ & $0$ \\
+		\onslide<2-> $Z$&&& \onslide<3-> $K_0$ && \onslide<5-> $B_1$ &&  \onslide<4-> $\mathbb Z$ \\ 
+		\onslide<2-> $B$&&& \onslide<5-> ${\mathbb Z}^3$ &&  \onslide<4-> $B_1$ && \onslide<3-> 0 \\ 
+		\onslide<2-> $H$&&& \onslide<6-> $\mathbb Z$ && \onslide<6-> $0$  && \onslide<6-> $\mathbb Z$ \\ 
+		\end{tabular}
+
+		\column{0.3\textwidth}
+		\onslide<1->
+		\begin{figure}
+		    \centering
+		    \def\svgwidth{\columnwidth}
+		    \input{simplex.pdf_tex}
+		\end{figure}
+		\onslide<7->
+		Сфера и проективная плоскость. С ней сложнее
+		\begin{figure}
+		    \centering
+		    \def\svgwidth{\columnwidth}
+		    \input{sipl-sphere.pdf_tex}
+		\end{figure}
+		\end{columns}
+	}
+
+	\frame {
+		\frametitle{Карта}
+		
+		\begin{figure}
+		    \centering
+		    \def\svgwidth{1\columnwidth}
+		    \input{allhom1.pdf_tex}
+		\end{figure}
+	}
+
+\frame {
+\large
+		\frametitle{Сингулярные гомологии}
+		
+		\begin{itemize}
+		\item У произвольного топологического пространства
+		\item Не требуют никакой особой структуры
+		\item Оперируют с бесконечнопорождёнными (несчётнопорождёнными) группами, вычислять гомологии очень сложно
+		\item Просто доказать условие комплекса $\partial\partial=0$
+		\item Инвариантность очевидна
+		\item Можно доказать инвариантность для других видов гомологий, путём сведения к сингулярным
+		\end{itemize}
+
+		\pause
+
+		Построение
+
+		\begin{itemize}
+		\item В каждой размерности $n\geqslant0$ берётся один симплекс $\Delta_n$
+		\item Рассматриваются всевозможные непрерывные отображения $n$-симплекса в топологическое пространство $X$. Каждое отображение~--- образующая $K_n$. \pause
+		\item Оператор $\partial$ от отображения $f:\Delta_n\to X$ берёт сумму ограничений $f$ на всевозможные грани $\Delta_n$ с соответствующими знаками.
+		\item Далее, комплекс по образующим и заданию $\partial$ на образующих строится точно так же, как и симплициальный
+		\end{itemize}
+	}
+
+	\frame {
+\large
+		\frametitle{Сингулярные гомологии. Пример}
+		Вычислим сингулярные гомологии \ldots \onslide<2-> точки ($*$). 
+
+	\kern1cm
+		\begin{tabular}{c c c c c c c c c c  c c c c c c }
+		&&& 0 && 1 && 2 && 3 && 4 & \ldots \\
+		$K$ & \onslide<3-> $0$ & $\leftarrow$ & $\mathbb Z$ & $\leftarrow$ & $\mathbb Z$ & $\leftarrow$ & $\mathbb Z$ & $\leftarrow$ & $\mathbb Z$ & $\leftarrow$ & $\mathbb Z$ & $\leftarrow$ \\
+		\onslide<2-> $Z$&&& \onslide<3-> $\mathbb Z$ \onslide<7->  && $\mathbb Z$  && 0 && $\mathbb Z$ && 0 \\ 
+		\onslide<2-> $B$&&& \onslide<7-> 0 && $\mathbb Z$ && 0 && $\mathbb Z$ && 0 \\ 
+		\onslide<2-> $H$&&& \onslide<8-> $\mathbb Z$ && 0 && 0 && 0 && 0 \\ 
+		\end{tabular}
+
+	\kern1cm
+		\begin{itemize}
+		\item \onslide<3-> Для каждого $n$ есть только одно отображение $f_n: \Delta_n\to*$
+		\item \onslide<4-> $\partial f_n = $ \onslide<5-> $ f_{n-1} - f_{n-1} + f_{n-1} - \ldots + (-1)^{n} f_{n-1}$
+		\item \onslide<6-> Таким образом $\partial f_n = 0$, если $n$~--- нечётное, и $f_{n-1}$, если чётное
+		\item \onslide<7-> $\partial f_n = 0$ означает, что $f_n\in Z_n$ и $B_{n-1} = 0$
+		\end{itemize}
+	}
+
+	\frame {
+		\frametitle{Карта}
+		
+		\begin{figure}
+		    \centering
+		    \def\svgwidth{1\columnwidth}
+		    \input{allhom2.pdf_tex}
+		\end{figure}
+	}
+
+
+	\frame {
+		\large
+		\frametitle{Ликбез по геометрии}
+		Сфера $\mathbb S^n$~--- граница $n+1$-мерного открытого шара (в метрическом смысле). Открытый шар $O^n$ топологически $n$-мерное евклидого пространство. По определению, $O^0 = *$.
+
+		\pause Вопросы:
+		\begin{itemize}
+		\item Что такое 1-мерная сфера? \pause Ответ: окружность
+		\item Что такое 0-мерная сфера? \pause Ответ: две точки
+		\item Что такое -1-мерная сфера? \pause Ответ: пустое множество
+		\end{itemize}
+
+		Топологическое пространство можно профакторизовать по замкнутому множеству, т. е. склеить это замкнутое множество в одну точку.
+
+		\begin{itemize}
+		\item Если профакторизовать замкнутый шар $D^n$ по границе ($n>0$), то получим \pause сферу $\mathbb S^n$\pause
+		\item Если открытый шар  $O^n$ ~--- открытое подмножество пространства $X$, то факторизация $X$ по дополнению до шара~--- это $\mathbb S^n$. Причём это верно даже для $n=0$.
+		\end{itemize}
+
+		Можно определить индекс отображения $\mathbb S^n\to\mathbb S^n$. Неформально~--- сколько раз одна сфера "наматывается"\ на другую. Индекс может быть отрицательным.
+	}
+
+	\frame {
+		\frametitle{Клеточные гомологии}
+
+		\begin{columns}
+		\column{0.40\textwidth}
+
+		\begin{itemize}
+		\item У топологического пространства с заданным разбиением на клетки
+		\item Требуют задания явной структуры
+		\item Гомологии вычислять легко и приятно (нет)
+		\item Инвариантность и $\partial\partial$ доказать сложно, но можно свести к сингулярным, откуда это следует
+		\end{itemize}
+		
+		\large
+		\onslide<5->
+		\begin{block}{Пример}
+		Cфера $\mathbb S^2$. Можно собрать её из \onslide<6-> одной 2-мерной клетки ($O_2$) и одной 0-мерной (точки). Весь круг --- граница $O_2$ --- отображается в точку.
+		\end{block}
+
+		\column{0.55\textwidth}
+		\large
+		\onslide<2->
+		\begin{block}{Определение CW-пространства}
+		\begin{itemize}
+		\item Клетка размерности $n$~--- непрерывное \textbf{вложение} открытого шара $O^n$ в наше пространство $X$.
+		\item Клетки не пересекаются. $X$ это объединение всех клеток всех размерностей.
+		\item $n$-остов объединение всех клеток размерности $n$ и меньше, обозначение $X_n$
+		\onslide<3->
+		\item Вложение клетки продолжается по непрерывности на её границу ($n-1$-мерную сферу). Образ границы обязан лежать в $n-1$-остове и пересекаться лишь с конечным числом клеток размерности $n-1$ и меньше. 
+		\onslide<4->
+		\item При построении CW-комплекса образующими $K_n$ будут $n$-мерные клетки
+		\end{itemize}
+		\end{block}
+
+		\end{columns}
+	}
+
+	\frame {
+		\frametitle{Клеточные гомологии. Пример пространства}
+		\Large
+
+		\begin{block}{Пример}
+		Проективная плоскость $\mathbb RP^2$. Сфера, у которой диаметрально противоположные точки отождествлены. 
+
+		\onslide<2-> Если удалить все "дубликаты" \ точек, получим \onslide<5->открытый круг, интервал и точку.
+		Т. е. по одной клетке размерностей 0, 1, 2.
+		\end{block}
+		
+		\begin{figure}
+		    \centering
+		    \onslide<1->\def\svgwidth{.2\columnwidth}
+		    \input{rp2-1a.pdf_tex}
+		    \onslide<2->\def\svgwidth{.2\columnwidth}
+		    \input{rp2-2a.pdf_tex}
+		    \onslide<3->\def\svgwidth{.2\columnwidth}
+		    \input{rp2-3a.pdf_tex}
+		    \onslide<4->\def\svgwidth{.2\columnwidth}
+		    \input{rp2-4a.pdf_tex}
+		\end{figure}
+	}
+
+	\frame {
+		\frametitle{Клеточные гомологии}
+		\Large
+
+		
+		\begin{block}{Граничный гомоморфизм}
+		\begin{itemize}
+		\item Чтобы построить $\partial$ нужно определить, сколько раз каждая $n-1$-клетка $y: O^{n-1}\to X$ входит в границу $n$-клетки $x: O^n\to X$.
+		\pause\item Для этого вспомним, что отображение $x$ продолжается на границу шара $O^n$, которая является сферой $\mathbb S^{n-1}$. Получаем отображение $\bar x: \mathbb S^{n-1}\to X_{n-1}$ в $n-1$-мерный остов.
+		\pause\item Если клетка $y$ не пересекается с $\Ima\bar x$, то она не входит в $\partial x$.
+		\pause\item Иначе, профакторизуем $n-1$-остов по дополнению до $y$. Как утверждалось, получим снова сферу $\mathbb S^{n-1}$ и отображение из $\hat y:X_{n-1}\to\mathbb S^{n-1}$.
+		\pause\item Беря композицию отображения границы $x$ в остов и отображения факторизации получим отображение $\hat y\circ\bar x:\mathbb S^{n-1}\to\mathbb S^{n-1}$
+		\pause\item Его степень - индекс вхождения клетки $y$ в $\partial x$.
+		\pause\item Как и раньше, $\partial$ в общем виде задаётся значениями на образующих
+		\end{itemize}
+		\end{block}
+	}
+
+
+	\frame {
+		\frametitle{Клеточные гомологии. Пример}
+		\Large
+		\begin{block}{Пример}
+		Сфера $\mathbb S^2$. \pause Как было сказано, задаётся двумя клетками: двумерной и 0-мерной.
+		\end{block}
+
+		\pause
+		\begin{tabular}{c c c c c c c c c c  }
+		&&& 0 && 1 && 2 \\
+		$K$ & $0$ & $\leftarrow$ & ${\mathbb Z}$ & $\leftarrow$ & 0 & $\leftarrow$ & ${\mathbb Z}$ & $\leftarrow$ & $0$ \\
+		\pause
+		$Z$&&&  ${\mathbb Z}$ && 0 &&  $\mathbb Z$ \\ 
+		$B$&&&  $0$ &&  $0$ &&  0 \\ 
+		\pause
+		$H$&&& $\mathbb Z$ &&  $0$  &&  $\mathbb Z$ \\ 
+		\end{tabular}
+		
+		\begin{figure}
+		    \centering
+		    \onslide<1->\def\svgwidth{.2\columnwidth}
+		    \input{rp2-1a.pdf_tex}
+		\end{figure}
+	}
+
+	\frame {
+		\frametitle{Клеточные гомологии. Пример 2}
+		\large
+		\begin{block}{Пример}
+		Проективная плоскость $\mathbb RP^2$. \pause Как было сказано, задаётся тремя клетками: двумерной, 1-мерной и 0-мерной.
+		\pause Тут придётся подумать, как устроены граничные операторы.
+
+		\pause Граница круга два раза наматывается на одномерную клетку. Поэтому коэффициент будет равен двум.
+
+		\pause Граница полуокружности дважды переодит в 0-мерную клетку, но с разными знаками, поэтому коэффициент 0. Это очевидно также из включения $B_1\subset Z_1$
+		\end{block}
+
+		\Large
+		\begin{tabular}{c c c c c c c c c c  }
+		\onslide<2->&&& 0 && 1 && 2 \\
+		$K$ & $0$ & $\leftarrow$ & ${\mathbb Z}$ & $\leftarrow$ & ${\mathbb Z}$ & $\leftarrow$ & ${\mathbb Z}$ & $\leftarrow$ & $0$ \\
+		\onslide<2->$Z$&&& \onslide<2-> ${\mathbb Z}$ && \onslide<5->${\mathbb Z}$ &&  \onslide<4-> 0 \\ 
+		\onslide<2->$B$&&& \onslide<5-> $0$ &&  \onslide<4-> $2{\mathbb Z}$ &&  \onslide<2-> 0 \\ 
+		\onslide<2->$H$&&& \onslide<6-> $\mathbb Z$ &&  $\mathbb Z_2$  &&  $0$ \\ 
+		\end{tabular}
+
+		\large
+		\onslide<7-> Верхняя группа гомологий 0, это признак того, что поверхность неориентируема.
+		
+		\begin{figure}
+		    \centering
+		    \onslide<1->\def\svgwidth{.1\columnwidth}
+		    \input{rp2-1a.pdf_tex}
+		    \onslide<1->\def\svgwidth{.1\columnwidth}
+		    \input{rp2-2a.pdf_tex}
+		    \onslide<1->\def\svgwidth{.1\columnwidth}
+		    \input{rp2-3a.pdf_tex}
+		    \onslide<1->\def\svgwidth{.1\columnwidth}
+		    \input{rp2-4a.pdf_tex}
+		\end{figure}
+	}
+
+	\frame {
+		\frametitle{Карта}
+		
+		\begin{figure}
+		    \centering
+		    \def\svgwidth{1\columnwidth}
+		    \input{allhom3.pdf_tex}
+		\end{figure}
+	}
+
+	\frame {
+		\frametitle{Что не затронули}
+		\Large
+		
+		Что ещё интересного в основах теории гомологий
+		\begin{itemize}
+		    \pause\item Когомологии
+		    \pause\item Относительные гомологии
+		    \pause\item Другие теории гомологий		    
+		    \pause\item Гомотопическая инвариантность
+		    \pause\item Функториальность
+		    \pause\item Гомологическую точную последовательность
+		    \pause\item Умножение в когомологиях
+		    \pause\item Ещё много всего
+		\end{itemize}
+	}
+\end{document}

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="35.148041mm"
+   height="36.180885mm"
+   viewBox="0 0 124.5403 128.19999"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="rp2.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker7878"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path7880"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect7876"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect7814"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect7365"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect7230"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect7226"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect7222"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4176"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect4172"
+       effect="spiro" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect4168"
+       effect="spiro" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect4164"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4160"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect4156"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4152"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4146"
+       is_visible="true" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7653">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#ff0000"
+         id="rect7655"
+         width="66.29126"
+         height="65.65992"
+         x="400.9043"
+         y="189.74585" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7698">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#2a2aff;stroke-width:1.15961051"
+         id="rect7700"
+         width="65.341438"
+         height="33.066063"
+         x="389.91098"
+         y="111.73721" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.1678384"
+     inkscape:cx="-0.18360229"
+     inkscape:cy="76.459666"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-nodes="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-global="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <sodipodi:guide
+       position="-310.15608,0.63512442"
+       orientation="0,1"
+       id="guide4148" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-395.87037,-204.79733)">
+    <circle
+       style="fill:#aaaaff;fill-opacity:1"
+       id="path7647"
+       cx="490.8306"
+       cy="234.37743"
+       r="28.960201" />
+    <circle
+       r="23.359777"
+       cy="223.40578"
+       cx="400.9043"
+       id="circle7649"
+       style="fill:none;fill-opacity:1;stroke:#2a2aff"
+       clip-path="none"
+       transform="matrix(1.2397464,0,0,1.2397464,-6.1890656,-42.589105)" />
+    <circle
+       style="fill:none;fill-opacity:1;stroke:#2a2aff;stroke-width:1.12046576"
+       id="path7659"
+       cx="427.39282"
+       cy="234.93037"
+       r="27.011229" />
+    <ellipse
+       cy="234.93037"
+       cx="427.39282"
+       id="circle7661"
+       style="fill:none;fill-opacity:1;stroke:#2a2aff;stroke-width:0.69188643;stroke-miterlimit:4;stroke-dasharray:2.76754569, 2.76754569;stroke-dashoffset:5.58087063"
+       rx="27.225519"
+       ry="10.21845" />
+    <ellipse
+       ry="9.1198225"
+       rx="24.298393"
+       style="fill:none;fill-opacity:1;stroke:#2a2aff;stroke-width:0.61749893"
+       id="ellipse7665"
+       cx="424.28571"
+       cy="111.73721"
+       clip-path="url(#clipPath7698)"
+       transform="matrix(1.1204658,0,0,1.1204658,-48.004804,109.73264)" />
+    <circle
+       r="28.960201"
+       cy="302.37744"
+       cx="424.83057"
+       id="circle8044"
+       style="fill:#aaaaff;fill-opacity:1" />
+    <circle
+       transform="matrix(1.2397464,0,0,1.2397464,-72.189066,25.410895)"
+       clip-path="url(#clipPath7653)"
+       style="fill:none;fill-opacity:1;stroke:#2a2aff"
+       id="circle8046"
+       cx="400.9043"
+       cy="223.40578"
+       r="23.359777" />
+    <circle
+       r="1.6603745"
+       cy="273.42053"
+       cx="425.26978"
+       id="circle8048"
+       style="fill:#000055;fill-opacity:1" />
+    <circle
+       style="fill:#aaaaff;fill-opacity:1"
+       id="circle8050"
+       cx="490.83057"
+       cy="302.37744"
+       r="28.960201" />
+    <circle
+       r="23.359777"
+       cy="223.40578"
+       cx="400.9043"
+       id="circle8052"
+       style="fill:none;fill-opacity:1;stroke:#2a2aff"
+       clip-path="url(#clipPath7653)"
+       transform="matrix(1.2397464,0,0,1.2397464,-6.18907,25.410895)" />
+    <circle
+       style="fill:#000055;fill-opacity:1"
+       id="circle8054"
+       cx="491.26978"
+       cy="273.42053"
+       r="1.6603745" />
+    <circle
+       style="fill:#000055;fill-opacity:1"
+       id="circle8058"
+       cx="424.63312"
+       cy="331.33694"
+       r="1.6603745" />
+  </g>
+</svg>
